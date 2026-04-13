@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-headline: var(--font-headline);
+  --font-body: var(--font-body);
+  
+  --color-surface: #070e1b;
+  --color-on-surface: #e2e8fb;
+  --color-on-surface-variant: #a5abbd;
+  --color-primary: #c1fffe;
+  --color-primary-dim: #00e6e6;
+  --color-secondary: #ff51fa;
+  --color-tertiary: #69fd5d;
+  --color-surface-container: #11192a;
+  --color-surface-container-low: #0c1322;
+  --color-surface-container-high: #172031;
+  --color-surface-bright: #222c41;
+  --color-outline-variant: #414857;
+}
+
+@layer base {
+  body {
+    @apply font-body bg-surface text-on-surface overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-surface-bright/40 backdrop-blur-2xl border border-outline-variant/20;
+  }
+  
+  .neon-glow-cyan {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  }
+  
+  .neon-glow-magenta {
+    box-shadow: 0 0 20px rgba(255, 81, 250, 0.2);
+  }
+
+  .floating-orb {
+    @apply absolute rounded-full blur-[80px] -z-10 opacity-40;
+  }
+}
+
+@layer utilities {
+  .asymmetric-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2.5rem;
+  }
+}
